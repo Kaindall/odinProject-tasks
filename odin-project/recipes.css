@@ -1,0 +1,35 @@
+/* color palete: 
+https://www.schemecolor.com/light-green-yellow-cream.php
+https://www.schemecolor.com/light-green-with-light-yellow-color-palette.php
+https://www.schemecolor.com/green-to-yellow-monochromatic-colors.php
+https://www.color-hex.com/color-palette/40910
+https://www.color-hex.com/color-palette/106509
+*/
+
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    text-align: center;
+}
+
+img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: auto;
+    height: 300px;
+}
+
+#catalog {
+    padding-top: 7px;
+    height: 550px;
+    width: auto;
+}
+
+article {
+    margin: 5px 0px 5px;
+    display: inline-block;
+    padding: 5px;
+}
