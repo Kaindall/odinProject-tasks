@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="SketchGame.js"></script>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+    <title>Etch a Sketch Toygame</title>
+</head>
+<body>
+    <main>
+        <section id="game-options">
+            <h1>Paint your own art!</h1>
+            <p>Current Size: 16x16</p>
+            <details id="resize-menu">
+                <summary>Resize</summary>
+                <form id="resize-form">
+                    <div>
+                        <label for="x-axis">X <span class="max-resize-note">(max 100)</span>:</label>
+                        <input class="resize-input" id="x-axis" type="number" max="100" required>
+                    </div>
+                    <div>
+                        <label for="y-axis">Y <span class="max-resize-note">(max 100)</span>:</label>
+                        <input class="resize-input" id="y-axis" type="number" max="100" required>
+                    </div>
+                    <button id="btn-resize" type="submit">Apply</button>
+                </form>
+            </details>
+        </div>
+    </section>
+    <section id="game-screen">
+    </main>
+</body>
+</html>
