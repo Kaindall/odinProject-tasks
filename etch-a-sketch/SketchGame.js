@@ -1,41 +1,23 @@
 class SketchGame {
-    #sketchSize;
+    #gameSize;
     #gameScreen = document.querySelector("#game-screen");
     
-    constructor(sizeX, sizeY) {
-        const trustedSizeX = (sizeX === undefined) ? 16 : sizeX;
-        const trustedSizeY = (sizeY === undefined) ? 16 : sizeY;
-        
-        this.#sketchSize = `${trustedSizeX}x${trustedSizeY}`;
+    constructor(gameSize) {
+        this.#gameSize = (gameSize === undefined) ? 16 : gameSize;
 
-        this.createGame(trustedSizeX, trustedSizeY);
-
-        console.log(this.#gameScreen.clientWidth);
-        console.log(this.#gameScreen.clientHeight);
+        this.createGame(this.#gameSize);
     }
 
-    createGame(sizeX, sizeY) {
-        const gameSizeMatrix = Array.apply(null, Array(sizeX));
-
-        gameSizeMatrix.forEach((grid, i) => {gameSizeMatrix[i] = Array.apply(null, Array(sizeY))});
+    createGame(size) {
+        this.#gameScreen.setAttribute("style", `grid-template-columns: repeat(${size}, 1fr); grid-template-rows: repeat(${size}, 1fr);`)
+        console.log(this.#gameScreen);
+        console.log(this.#gameSize);
     
-        gameSizeMatrix.forEach((row) => {
-            const rowElement = document.createElement("div");
-            rowElement.classList.add("row");
-            row.forEach(() => {
-                const gridElement = document.createElement("div");
-                gridElement.classList.add("grid");
-                gridElement.setAttribute("style", 
-                                        `width:${this.#gameScreen.clientWidth/sizeX}px; 
-                                        height:${this.#gameScreen.clientHeight/sizeY}px;`);
-                rowElement.appendChild(gridElement);
-            })
-            this.#gameScreen.appendChild(rowElement);
-        })
+        for (let i = 0; i < size * size; i++) {
+            const pixelElement = document.createElement("div");
+            pixelElement.setAttribute("style", `height: ${this.#gameScreen.clientHeight / this.#gameSize}px;`);
+            pixelElement.classList.add("grid");
+            this.#gameScreen.appendChild(pixelElement);
+        }
     }
-
-    generateMatrix () {}
-
-
-
 }
